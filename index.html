@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <title>Huns Library App</title>
+</head>
+<body>
+  <!-- Header -->
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <h3 class="float-md-start mb-0">Huns Library</h3>
+        <button type="button" class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#book-form">Add Book</button>
+      </div>
+    </div>
+  </header>
+  <!-- Header -->
+
+  <!-- Body-Table -->
+  <div class="d-flex h-100 text-center">
+    <div class="cover-container d-flex w-50 h-100 p-3 mx-auto flex-column">
+      <main class="px-3">
+        <h1>Static layout ready for JS.</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>test</th>
+              <th>test</th>
+              <th>test</th>
+              <th>test</th>
+              <th>test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+
+      <footer class="mt-auto text-dark-50">
+        <p>Announcement will be published</p>
+      </footer>
+    </div>
+  </div>
+  <!-- Body-Table -->
+
+  <!-- Modal-Book-Form -->
+  <div class="modal fade" id="book-form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add a book</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal-Book-Form -->
+
+</body>
+</html>
