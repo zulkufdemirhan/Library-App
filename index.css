@@ -1,3 +1,24 @@
 .btn-warning {
   background-color: #F3A000 !important; 
 }
+
+.modal-content {
+  width: 60% !important;
+}
+
+.form-check-input {
+  height: 1.4em !important;
+}
+
+.form-switch .form-check-input {
+  width: 3em !important;
+}
+
+.form-switch {
+  padding-left: 0.5em !important;
+}
+
+.modal-dialog{
+  display: flex !important;
+  justify-content: center !important;
+}
