@@ -24,27 +24,21 @@
 
   <!-- Body-Table -->
   <div class="d-flex h-100 text-center">
-    <div class="cover-container d-flex w-50 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-75 h-100 p-3 mx-auto flex-column">
       <main class="px-3">
         <h1>Static layout ready for JS.</h1>
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>test</th>
-              <th>test</th>
-              <th>test</th>
-              <th>test</th>
-              <th>test</th>
+              <th>#</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Total pages</th>
+              <th>Status</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>test</td>
-              <td>test</td>
-              <td>test</td>
-              <td>test</td>
-              <td>test</td>
-            </tr>
+          <tbody id="bookList">
+            
           </tbody>
         </table>
       </main>
@@ -64,17 +58,32 @@
           <h5 class="modal-title" id="staticBackdropLabel">Add a book</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-warning">Understood</button>
-        </div>
+        <form id="form">
+          <div class="modal-body d-flex flex-wrap justify-content-between">
+            <div class="col-12">
+              <input class="form-control" id="title" type="text" placeholder="Title" aria-label="Title">
+            </div>
+            <div class="col-12 my-3">
+              <input class="form-control" id="author" type="text" placeholder="Author" aria-label="Author">
+            </div>
+            <div class="col-12 mb-3">
+              <input class="form-control" id="total" type="text" placeholder="Total page" aria-label="Total page">
+            </div>
+            <div class="col-8 d-flex align-items-center justify-content-center form-check form-switch">
+              <input class="form-check-input" id="toggle" type="checkbox" id="flexSwitchCheckDefault">
+              <label class="form-check-label ms-3 w-50" id="toggleLabel" for="flexSwitchCheckDefault">not Readed</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <input type="submit" value="Save" class="btn btn-warning" data-bs-dismiss="modal"/>
+          </div>
+        </form>
       </div>
     </div>
   </div>
   <!-- Modal-Book-Form -->
 
+  <script src="./index.js"></script>
 </body>
 </html>
