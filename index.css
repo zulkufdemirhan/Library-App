@@ -22,3 +22,7 @@
   display: flex !important;
   justify-content: center !important;
 }
+
+th{
+  min-width: 150px;
+}
