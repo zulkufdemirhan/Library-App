@@ -24,34 +24,32 @@ class Book {
 
 // form submit function
 formSubmit.addEventListener("submit", (e) => {
-  const newBook = new Book(bookId, title.value, author.value, page.value);
-  libraryObj.push(newBook);
   e.preventDefault();
 
-  if (title.value === "" && author.value == "" ) {
+  if (title.value === "" && author.value === "" ) {
     alert("Please fill the form")
   } else{
+    const newBook = new Book(bookId, title.value, author.value, page.value);
+    libraryObj.push(newBook);
     createBook();
     title.value  = "";
     author.value = "";
     total.value  = "";
   }
 
-  console.log(libraryObj)
 });
 
 // Toggle Function
 inputToggleClick.addEventListener("click", () => {
   if (inputToggle === false) {
-    inputToggle = true;
+    inputToggle  = true;
     toggleStatus = "Readed"
     toggleLabel.innerText = "Readed"
   } else {
-    inputToggle= false;
+    inputToggle  = false;
     toggleStatus = "not Readed"
     toggleLabel.innerText = "not Readed"
   }
-  console.log(inputToggle)
 });
 
 // HTML elements created
@@ -63,6 +61,10 @@ const createBook = function () {
   const tableDataAuthor = document.createElement("td");
   const tableDataPage   = document.createElement("td");
   const tableDataStatus = document.createElement("td");
+  const tableDataBtn    = document.createElement("td");
+  const removeBtn       = document.createElement("button");
+  const tableDataStatusBtn = document.createElement("td");
+  const changeStatus     = document.createElement("button");
 
   // row goes table
   myBookList.appendChild(tableRow);
@@ -73,11 +75,40 @@ const createBook = function () {
   tableRow.appendChild(tableDataAuthor);
   tableRow.appendChild(tableDataPage);
   tableRow.appendChild(tableDataStatus);
+  tableRow.appendChild(tableDataBtn);
+  tableDataBtn.appendChild(removeBtn);
+  tableRow.appendChild(tableDataStatusBtn);
+  if (toggleStatus != "Readed") {
+    tableDataStatusBtn.appendChild(changeStatus);
+  }
 
+  let statusToggle = false;
+  changeStatus.className = "btn btn-sm btn-warning";
+  changeStatus.addEventListener("click", () => {
+    if ( statusToggle === false ){
+      statusToggle  = true;
+      changeStatus.className = "btn btn-sm btn-success";
+      tableDataStatus.innerText = "Readed"
+    } else{
+      statusToggle  = false;
+      changeStatus.className = "btn btn-sm btn-warning";
+      tableDataStatus.innerText = "not Readed"
+    }
+  });
+
+
+
+  removeBtn.className    = "btn btn-sm btn-danger remove-book";
+  removeBtn.addEventListener("click", () => {
+    tableRow.remove();
+    delete libraryObj;
+  });
   // values goes td
   tableDataId.innerText = bookId += 1;
-  tableDataTitle.innerText = title.value;
+  tableDataTitle.innerText  = title.value;
   tableDataAuthor.innerText = author.value;
-  tableDataPage.innerText = page.value;
-  tableDataStatus.innerText = toggleStatus;
+  tableDataPage.innerText   = page.value;
+  tableDataStatus.innerText = "not Readed";
+  removeBtn.innerText    = "Remove Book";
+  changeStatus.innerText = "Readed";
 }
